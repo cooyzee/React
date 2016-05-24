@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "bootstrap": "^3.3.6",
+    "cropper": "^2.3.0",
     "jquery": "^2.2.3",
     "normalize.css": "^4.1.1"
   },

@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>ImgCrop</title>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">
 	<style type="text/css">
         body{ padding: 20px; }
-		.container{ width: 300px; }
         .resizer{ overflow: hidden; }
         .resizer.have-img button.ok{ display: inline-block; }
         .resizer.have-img .inner { display: block; }
@@ -268,7 +266,9 @@
 
         url:url,
 
-        data:fd
+        data:fd,
+        processData: false,
+        contentType: false
 
     });
 
