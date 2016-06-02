@@ -3,8 +3,6 @@
  * Copyright 2016 Cooyzee.
  * Licensed under MIT
  */
-
-// Core variables and mixins
-@import "sass/variables";
-@import "sass/mixins";
-@import "sass/main";
+body {
+  font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px; }
