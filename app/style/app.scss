@@ -7,4 +7,12 @@
 // Core variables and mixins
 @import "sass/variables";
 @import "sass/mixins";
-@import "sass/main";
+
+// Reset
+@import "sass/normalize";
+
+/*! Core css begins here ... | Like what I saying, this is the industry standard*/
+
+// Core CSS
+@import "sass/scaffolding";
+@import "sass/nav";
