@@ -1,5 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-ruby-sass');
+var webpack = require('gulp-webpack');
+var webpackConfig = require('./webpack.config');
 
 var root = 'app/';
 var paths = {
@@ -18,6 +20,13 @@ gulp.task('sass',function(){
 
 gulp.task('watch', function() {
     gulp.watch(paths.sassRoot, ['sass']);
+});
+
+gulp.task("webpack", function() {
+    return gulp
+        .src('./')
+        .pipe(webpack(webpackConfig))
+        .pipe(gulp.dest(paths.dist));
 });
 
 gulp.task('default',['watch','sass']);
