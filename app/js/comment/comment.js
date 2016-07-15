@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default class HelloWorldComponent extends React.Component {
+export default class Comment extends React.Component {
     constructor() {
         super();
         this.state = {};
     }
     render() {
-        return (<div>Hello World</div>);
+        return (<h4>There must be a comment!</h4>);
     }
 }
