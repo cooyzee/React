@@ -1,5 +1,5 @@
 import React from 'react';
-import $ from 'jquery';
+// import $ from 'jquery';
 
 class CommentBox extends React.Component{
     constructor(){
@@ -12,13 +12,13 @@ class CommentBox extends React.Component{
     }
 
     getComments(){
-        $.ajax({
-            url: this.state.url,
-            dataType: 'json',
-            cache: false,
-            success: (data) => this.setState({data:data}),
-            error: (xhr, status, err) => console.error(this.props.url, status, err.toString())
-        });
+        // $.ajax({
+        //     url: this.state.url,
+        //     dataType: 'json',
+        //     cache: false,
+        //     success: (data) => this.setState({data:data}),
+        //     error: (xhr, status, err) => console.error(this.props.url, status, err.toString())
+        // });
     }
 
     updateComments(comment){
