@@ -6,8 +6,8 @@ module.exports = {
     // plugins: [commonsPlugin],
     entry: {
         app: [
-            // 'webpack-dev-server/client?http://172.16.20.140:3000',
-            // 'webpack/hot/only-dev-server',
+            'webpack-dev-server/client?http://172.16.20.140:3000',
+            'webpack/hot/only-dev-server',
             './app/js/app'
         ]
     },
@@ -17,10 +17,10 @@ module.exports = {
     output: {
         path: __dirname + '/app/dist',
         filename: '[name].js',
-        // libraryTarget: 'umd',
+        libraryTarget: 'umd',
         publicPath:'/app/dist'
     },
-    // externals: {'react': 'React', 'react-dom': 'ReactDOM', 'react-router': 'ReactRouter'},
+    externals: {'react': 'React', 'react-dom': 'ReactDOM', 'react-router': 'ReactRouter'},
     module: {
         loaders:[
             {
@@ -38,9 +38,9 @@ module.exports = {
     //     includePaths: [path.resolve(__dirname, "app/style")]
     // },
     plugins: [
-        // new webpack.HotModuleReplacementPlugin(),
-        // new webpack.NoErrorsPlugin(),
         // new ExtractTextPlugin("styles.css"),
-        // new webpack.optimize.UglifyJsPlugin()
+        // new webpack.optimize.UglifyJsPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
     ]
 };

@@ -10,9 +10,10 @@ export default class Welcome extends React.Component {
         return (
             <div>
                 <ul>
-                    <li><Link to="/list" activeStyle={{ color: 'red' }}>comment list</Link></li>
+                    <li><Link to="/list" activeStyle={{ color: 'green' }}>comment list</Link></li>
                     <li><Link to="/comment" activeStyle={{ color: 'red' }}>comment</Link></li>
                 </ul>
+
                 {this.props.children}
             </div>
         );
