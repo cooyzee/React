@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import NavLink from './utility/NavLink';
 
 export default class Welcome extends React.Component {
     constructor() {
@@ -9,9 +9,10 @@ export default class Welcome extends React.Component {
     render() {
         return (
             <div>
-                <ul>
-                    <li><Link to="/list" activeStyle={{ color: 'green' }}>comment list</Link></li>
-                    <li><Link to="/comment" activeStyle={{ color: 'red' }}>comment</Link></li>
+                <div className="pop-stripe"></div>
+                <ul role="nav">
+                    <li><NavLink to="/list">comment list</NavLink></li>
+                    <li><NavLink to="/comment">comment</NavLink></li>
                 </ul>
 
                 {this.props.children}
