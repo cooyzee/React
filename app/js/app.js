@@ -16,4 +16,4 @@ ReactDOM.render(
     document.getElementById('content')
 );
 
-// module.hot.accept();
+module.hot.accept();
