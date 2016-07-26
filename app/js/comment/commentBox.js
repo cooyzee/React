@@ -1,24 +1,24 @@
 import React from 'react';
-// import $ from 'jquery';
+import $ from 'jquery';
 
-class CommentBox extends React.Component{
+export default class CommentBox extends React.Component{
     constructor(){
         super();
         this.state = {
-            url:'app/comments.json',
+            url:'comments.json',
             data: []
         };
         this.getComments = this.getComments.bind(this);
     }
 
     getComments(){
-        // $.ajax({
-        //     url: this.state.url,
-        //     dataType: 'json',
-        //     cache: false,
-        //     success: (data) => this.setState({data:data}),
-        //     error: (xhr, status, err) => console.error(this.props.url, status, err.toString())
-        // });
+        $.ajax({
+            url: this.state.url,
+            dataType: 'json',
+            cache: false,
+            success: (data) => this.setState({data:data}),
+            error: (xhr, status, err) => console.error(this.props.url, status, err.toString())
+        });
     }
 
     updateComments(comment){
@@ -38,8 +38,9 @@ class CommentBox extends React.Component{
     render(){
         return(
             <div class="commentBox">
-                <h1>Comments</h1>
+                <h2>Comments</h2>
                 <CommentList data={this.state.data}/>
+                <hr/>
                 <CommentForm onCommentSubmit={this.updateComments.bind(this)}/>
             </div>
         )
@@ -50,7 +51,9 @@ class Comment extends React.Component{
     render(){
         return(
             <div className="comment">
-                <h2 className="commentAuthor">{this.props.author}</h2>
+                <h3 className="commentAuthor">
+                    <a href={"#/list/"+this.props.id}>{this.props.author}</a>
+                </h3>
                 {this.props.children}
             </div>
         )
@@ -63,7 +66,7 @@ class CommentList extends React.Component{
             <div class="commentList">
                 {
                     this.props.data.map((c) => {
-                        return <Comment author={c.author} key={c.id}>{c.text}</Comment>
+                        return <Comment author={c.author} key={c.id} id={c.id}>{c.text}</Comment>
                     })
                 }
             </div>
@@ -119,5 +122,3 @@ class CommentForm extends React.Component{
         )
     }
 }
-
-export default CommentBox;

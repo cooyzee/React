@@ -1,11 +1,15 @@
 import React from 'react';
+import CommentBox from './CommentBox';
+import CommentDetail from './CommentDetail';
 
-export default class Comment extends React.Component {
-    constructor() {
-        super();
-        this.state = {};
-    }
+class Comment extends React.Component {
     render() {
-        return (<h4>There must be a comment!</h4>);
+        return (
+            <div>
+                {this.props.children}
+            </div>
+        );
     }
 }
+
+export { Comment, CommentBox, CommentDetail }
