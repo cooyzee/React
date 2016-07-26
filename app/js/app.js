@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CommentBox from './comment/commentBox';
-import Welcome from './welcome';
+import Welcome from './index';
 import Comment from './comment/comment';
-import {Router, Route, Link, hashHistory} from 'react-router';
+import {Router, Route, hashHistory} from 'react-router';0
 import css from '../style/app.scss';
 
 ReactDOM.render(
@@ -16,4 +16,4 @@ ReactDOM.render(
     document.getElementById('content')
 );
 
-module.hot.accept();
+// module.hot.accept();
