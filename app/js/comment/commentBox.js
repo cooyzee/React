@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import {Link} from 'react-router';
 
 export default class CommentBox extends React.Component{
     constructor(){
@@ -52,7 +53,7 @@ class Comment extends React.Component{
         return(
             <div className="comment">
                 <h3 className="commentAuthor">
-                    <a href={"#/list/"+this.props.id}>{this.props.author}</a>
+                    <Link to={"/list/"+this.props.id}>{this.props.author}</Link>
                 </h3>
                 {this.props.children}
             </div>
