@@ -9,7 +9,7 @@ export default class CommentBox extends React.Component{
             url:'comments.json',
             data: []
         };
-        this.getComments = this.getComments.bind(this);
+        // this.getComments = this.getComments.bind(this);
     }
 
     getComments(){
@@ -33,7 +33,7 @@ export default class CommentBox extends React.Component{
 
     componentDidMount(){
         this.getComments();
-        // setInterval(this.getComments,this.props.pollInterval)
+        // setInterval(this.getComments,this.props.pollInterval);
     }
 
     render(){
@@ -98,27 +98,34 @@ class CommentForm extends React.Component{
         let text = this.state.text.trim();
         if(author && text) {
             this.props.onCommentSubmit({author: author, text: text});
-        }else{
-            return;
         }
     }
 
     render(){
         return (
             <form className="commentForm" onSubmit={this.handleSubmit.bind(this)}>
-                <input
-                    type="text"
-                    placeholder="You name"
-                    value={this.state.author}
-                    onChange={this.handleAuthorChange.bind(this)}
-                />
-                <input
-                    type="text"
-                    placeholder="Say something..."
-                    value={this.state.text}
-                    onChange={this.handleTextChange.bind(this)}
-                />
-                <input type="submit" value="Post"/>
+                <div>
+                    <input
+                        type="text"
+                        placeholder="You name"
+                        value={this.state.author}
+                        onChange={this.handleAuthorChange.bind(this)}
+                    />
+                </div>
+                <br/>
+                <div>
+                    <textarea
+                        type="text"
+                        rows="5"
+                        style={{width:'50%',resize:'none'}}
+                        placeholder="Say something..."
+                        value={this.state.text}
+                        onChange={this.handleTextChange.bind(this)}
+                    />
+                </div>
+                <div>
+                    <input type="submit" value="Post" />
+                </div>
             </form>
         )
     }

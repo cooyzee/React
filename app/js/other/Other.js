@@ -4,7 +4,7 @@ export default class Other extends React.Component{
     render(){
         return (
             <div>
-                <h1>There must be a Other Module.</h1>
+                <h1>There must be an Other Module.</h1>
             </div>
         )
     }
