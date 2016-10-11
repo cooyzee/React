@@ -19,6 +19,7 @@
     "bootstrap-sass": "^3.3.6",
     "css-loader": "^0.23.1",
     "del": "^2.2.1",
+    "express": "^4.14.0",
     "gulp": "^3.9.1",
     "gulp-ruby-sass": "^2.0.6",
     "jquery": "^3.1.0",
@@ -31,8 +32,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "express": "node express.js"
   },
   "keywords": [
     "react"

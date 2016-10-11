@@ -3,22 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Title</title>
+    <title>Bottom Fixed Bg-Img</title>
+    <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">
     <style>
-        html,body{ height:100%;padding:0;margin:0}
+        * {
+            box-sizing:border-box;
+        }
+        *:before,
+        *:after {
+            box-sizing:border-box;
+        }
+        html,body{ height: 100%;}
         body{
-            height: 1000px;
-            background-image: url('img/bbb.png');
-            background-size: 50px auto;
+            font-family: 'Microsoft YaHei',sans-serif;
+            background-color: #fff;
+        }
+        p{ margin: 0; padding:0 15px; padding-bottom: 10px;}
+        .container{
+            padding-top: 10px;
+            min-height: 100%;
+            padding-bottom: 15%;
+            background-image: url('../lib/img/bbb.png');
+            background-size: 50px 50px;
             background-position: center bottom;
             background-repeat: no-repeat;
+        }
+        .sub-block{ display: none; }
+        .button{
+            display: block;
+            text-align: center;
+            font-family: 'Microsoft YaHei',sans-serif;
+            width: 50%;
+            margin: 1rem auto;
+            padding:0.5rem;
+            color: #fff;
+            background-color: #5cb85c;
+            border: none;
+            border-radius: 3px;
+            box-shadow: 2px 2px 0 1px rgba(0,0,0,.15);
         }
     </style>
 </head>
 <body>
-    <div>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab beatae blanditiis debitis inventore non nulla, repellat reprehenderit. A at, maxime nesciunt perspiciatis quasi repudiandae voluptatem! Aspernatur distinctio eligendi, laborum omnis ratione temporibus ullam veniam! Error harum incidunt iste modi! Ad.
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab beatae blanditiis debitis inventore non nulla, repellat reprehenderit. A at, maxime nesciunt perspiciatis quasi repudiandae voluptatem! Aspernatur distinctio eligendi, laborum omnis ratione temporibus ullam veniam! Error harum incidunt iste modi! Ad.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur doloribus eaque earum placeat quaerat quia quod sed ut vitae. Alias distinctio eum magnam natus quisquam suscipit voluptatibus? Ipsam reiciendis, vel!</p>
+        <div id="sub-block" class="sub-block">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt obcaecati quo repellendus. Aperiam asperiores aut dolore quos veritatis! Ab est eveniet ex ipsa mollitia nostrum, odio pariatur sequi sint velit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci aliquid, at aut autem culpa dolorem doloremque dolorum exercitationem expedita facere impedit iure nesciunt omnis porro quasi repellat repudiandae sunt!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur doloribus eaque earum placeat quaerat quia quod sed ut vitae. Alias distinctio eum magnam natus quisquam suscipit voluptatibus? Ipsam reiciendis, vel!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur doloribus eaque earum placeat quaerat quia quod sed ut vitae. Alias distinctio eum magnam natus quisquam suscipit voluptatibus? Ipsam reiciendis, vel!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur doloribus eaque earum placeat quaerat quia quod sed ut vitae. Alias distinctio eum magnam natus quisquam suscipit voluptatibus? Ipsam reiciendis, vel!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur doloribus eaque earum placeat quaerat quia quod sed ut vitae. Alias distinctio eum magnam natus quisquam suscipit voluptatibus? Ipsam reiciendis, vel!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur doloribus eaque earum placeat quaerat quia quod sed ut vitae. Alias distinctio eum magnam natus quisquam suscipit voluptatibus? Ipsam reiciendis, vel!</p>
+        </div>
+        <a onclick="toggle()" class="button">Toggle</a>
     </div>
-
 </body>
+<script>
+    var flag = false;
+    function toggle() {
+        if(!flag){
+            document.getElementById('sub-block').style.display = 'block';
+        }else{
+            document.getElementById('sub-block').style.display = 'none';
+        }
+        flag = !flag;
+    }
+</script>
 </html>
