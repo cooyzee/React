@@ -7,9 +7,15 @@
 <body>
 
 <script>
-    var arr = [100,20,3,-4,-40];
-    var temp = arr;
-    document.write(arr.join(''));
+    let value = "2013-02-23 17:50:50";
+    let arr1 = value.split(" ");
+    console.log(arr1);
+    let arr2 = arr1[0].split('-');
+    console.log(arr2);
+    let arr3 = arr1[1].split(':');
+    console.log(arr3);
+    let string =  arr2[1]+"-"+arr2[2]+" "+arr3[0]+":"+arr3[1];
+    console.log(string)
 </script>
 </body>
 </html>

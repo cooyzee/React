@@ -13,6 +13,7 @@ Nov. 1996 Netscape决定将JavaScript提交给国际化组织ECMA,希望能成�
 ### Syntax
 
 1. let,声明变量，但是只在代码块内有效,且不存在变量提升
+Block-Scoped Variables without hoisting
 ```
 for(let i=0;i<arr.length;i++){}
 ```

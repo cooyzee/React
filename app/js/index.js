@@ -2,7 +2,7 @@ import React from 'react';
 import NavLink from './utility/NavLink';
 import {Link} from 'react-router';
 
-// if need home
+// if need home 
 // <NavLink to="/" onlyActiveOnIndex={true}>Home</NavLink>
 
 export default class Welcome extends React.Component {

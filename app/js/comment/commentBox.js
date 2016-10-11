@@ -38,7 +38,7 @@ export default class CommentBox extends React.Component{
 
     render(){
         return(
-            <div class="commentBox">
+            <div className="commentBox">
                 <h2>Comments</h2>
                 <CommentList data={this.state.data}/>
                 <hr/>
@@ -64,7 +64,7 @@ class Comment extends React.Component{
 class CommentList extends React.Component{
     render(){
         return(
-            <div class="commentList">
+            <div className="commentList">
                 {
                     this.props.data.map((c) => {
                         return <Comment author={c.author} key={c.id} id={c.id}>{c.text}</Comment>
@@ -98,6 +98,8 @@ class CommentForm extends React.Component{
         let text = this.state.text.trim();
         if(author && text) {
             this.props.onCommentSubmit({author: author, text: text});
+        }else{
+            alert('Please complete the form!')
         }
     }
 
