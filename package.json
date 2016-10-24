@@ -1,11 +1,6 @@
 {
   "name": "cooyzee-react",
-  "version": "1.0.0",
-  "description": "cooyzee's test react demo",
-  "main": "gulpfile.js",
-  "directories": {
-    "test": "test"
-  },
+  "description": "cooyzee's test react demo, many study and test pages",
   "dependencies": {
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
@@ -35,16 +30,14 @@
     "express": "node express.js"
   },
   "keywords": [
-    "react"
+    "react",
+    "node",
+    "javascript"
   ],
   "author": "Cooyzee",
-  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cooyzee/ReactCooyzee.git"
-  },
-  "bugs": {
-    "url": "https://github.com/cooyzee/ReactCooyzee/issues"
   },
   "homepage": "https://github.com/cooyzee/ReactCooyzee#readme"
 }

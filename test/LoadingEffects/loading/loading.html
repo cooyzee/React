@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrap{
+            width: 200px;
+            height:50px;
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+        .wrap .btn{
+            display: block;
+            cursor: pointer;
+            width: 50px;
+            text-align: center;
+            margin: auto;
+            padding: .5rem 0;
+            background-color: #00b3ee;
+            color: #fff;
+            border-radius: 3px;
+        }
+
+        .wrap .progress{
+            display: none;
+            height: 20px;
+            width: 100%;
+            border:1px solid #eee;
+        }
+        .wrap .progress .bar{
+            transition:all 1s ease;
+            -webkit-transition:all 1s ease;
+            text-align: center;
+            color: #fff;
+            height:100%;
+            width: 30%;
+            background-color: #5cb85c;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <a class="btn" onclick="loading()">发布</a>
+        <div class="progress">
+            <div class="bar"></div>
+        </div>
+    </div>
+</body>
+<script src="jquery.min.js"></script>
+<script>
+    var per = 0,finish = false;
+    function loading() {
+
+        //初始化
+        per = 0;finish = false;
+        $(".wrap .progress .bar").css('width','0').html('0%');
+        $(".wrap .btn").hide().siblings().show();
+        //set interval
+        var load = setInterval(function () {
+            if(finish){
+                $(".wrap .progress").hide().siblings().show();
+                clearInterval(load);
+            }
+            per += 3;
+            $(".wrap .progress .bar").css('width',per+'%').html(per+'%');
+            finish = per>=100;
+        },300)
+    }
+</script>
+</html>

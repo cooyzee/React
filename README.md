@@ -8,7 +8,8 @@
 1. and have fun
 
 ## Q&A
-1.
+1. what is react?
+A JAVASCRIPT LIBRARY FOR BUILDING USER INTERFACES
 
 ##Things I need to know
 1. JSX
