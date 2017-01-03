@@ -109,12 +109,15 @@ class CommentForm extends React.Component{
                 <div>
                     <input
                         type="text"
-                        placeholder="You name"
+                        placeholder="jYou name"
                         value={this.state.author}
                         onChange={this.handleAuthorChange.bind(this)}
                     />
                 </div>
                 <br/>
+                <div>
+                    <input type="text"/>
+                </div>
                 <div>
                     <textarea
                         type="text"
