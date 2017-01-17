@@ -6,7 +6,7 @@ export default class CommentBox extends React.Component{
     constructor(){
         super();
         this.state = {
-            url:'comments.json',
+            url:'static/comments.json',
             data: []
         };
         // this.getComments = this.getComments.bind(this);

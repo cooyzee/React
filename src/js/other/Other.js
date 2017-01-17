@@ -1,5 +1,6 @@
 import React from 'react';
 import U from '../utility/Util';
+import Counter from './Counter';
 
 export default class Other extends React.Component {
     /*
@@ -89,9 +90,9 @@ export default class Other extends React.Component {
     render() {
         U.log('Render()');
         let items = [
-            {id:1,name:'Cooyzee'},
-            {id:2,name:'Leo'},
-            {id:3,name:'Nancy'}
+            {id: 1, name: 'Cooyzee'},
+            {id: 2, name: 'Leo'},
+            {id: 3, name: 'Nancy'}
         ];
         return (
             <div>
@@ -102,10 +103,11 @@ export default class Other extends React.Component {
                 <div>{'First &middot; Second'}</div>
                 <div>{'First \u00b7 Second'}</div>
                 <div>{['First ', <span key="middot">&middot;</span>, ' Second']}</div>
-                <div dangerouslySetInnerHTML={{__html: '<script>alert("xxx")</script>'}} />
+                <div dangerouslySetInnerHTML={{__html: '<script>alert("xxx")</script>'}}/>
                 <ol>
                     {items.map((x)=><li key={x.id}>x.name</li>)}
                 </ol>
+                <Counter/>
             </div>
         );
     }

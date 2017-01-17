@@ -1,30 +1,20 @@
-"use strict";
-
-var gulp = require('gulp');
-var del = require('del');
-var sass = require('gulp-ruby-sass');
-
-var root = 'app/';
-var paths = {
-    scripts: root+ 'js/**/*.js',
-    sass: root + 'style/app.scss',
-    sassRoot: root + 'style/**/*.scss',
-    images: root + 'img/**/*',
-    dist: root + 'dist'
-};
+const gulp = require('gulp');
+const del = require('del');
+const sass = require('gulp-ruby-sass');
 
 gulp.task('clean:css',function () {
-    del(['app/dist/*.css']);
+    del(['dist/*.css']);
 });
 
 gulp.task('sass',function(){
-    return sass(paths.sass,{style:'compressed'})
-        .on('error',sass.logError)
-        .pipe(gulp.dest(paths.dist));
+    return sass('src/style/app.scss',{style:'compressed'})
+        .on('error', sass.logError)
+        .pipe(gulp.dest('dist'))
+
 });
 
 gulp.task('watch', function() {
-    gulp.watch(paths.sassRoot, ['sass']);
+    gulp.watch('src/style/**/*.scss', ['sass']);
 });
 
 gulp.task('default',['watch','sass']);

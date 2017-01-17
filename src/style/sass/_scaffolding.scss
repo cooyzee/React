@@ -120,3 +120,13 @@ hr {
 [role="button"] {
   cursor: pointer;
 }
+
+.text-blue {
+  color: $brand-primary;
+}
+
+.cBtn {
+  min-width: 45px;
+  padding:2px 5px;
+  margin:0 5px;
+}
