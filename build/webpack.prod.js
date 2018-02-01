@@ -6,7 +6,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 module.exports = {
   entry: {
-    app: './src/app'
+    app: path.join(__dirname, '../src/app')
   },
   output: {
     filename: '[name].[chunkhash:8].js',
@@ -29,7 +29,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({template: './src/index.html'}),
+    new HtmlWebpackPlugin({template: path.join(__dirname, '../src/index.html')}),
     new ExtractTextPlugin('[name].[contenthash:8].css'),
     new OptimizeCssAssetsPlugin({
       cssProcessorOptions: { discardComments: {removeAll: true } }
