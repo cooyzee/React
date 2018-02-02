@@ -13,12 +13,12 @@
 A JAVASCRIPT LIBRARY FOR BUILDING USER INTERFACES
 ```
 
-## Things I need to know
-1. JSX
-1. commonJS
-1. ECMAScript 2016
-1. AMD/CMD
-1. webpack 
+## what have joined
+1. react-router
+1. webpack
+1. sass
+1. bootstrap 4
+1. axios
 
 ## Update Times
 May 18, 2016 @ Cooyzee  
