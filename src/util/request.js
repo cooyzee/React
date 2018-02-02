@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+// global option
 const options = {
   baseURL: '/',
   timeout: 10000,
@@ -14,15 +15,17 @@ const beforeRequest = config => {
 
 commonAjax.interceptors.request.use(beforeRequest)
 
-commonAjax.interceptors.response.use(res => {
+const beforeResponse = res => {
   if (res.data.success) {
     return res.data
   } else {
     return null
   }
-}, function (err) {
-  // Do something with response error
-  return Promise.reject(err)
-})
+}
+
+// commonAjax.interceptors.response.use(beforeResponse, function (err) {
+//   // Do something with response error
+//   return Promise.reject(err)
+// })
 
 export default commonAjax
