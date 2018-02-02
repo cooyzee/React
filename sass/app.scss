@@ -1,23 +1,21 @@
 /*!
- * Cooyzee's first sass demo practice (https://github.com/cooyzee)
- * Copyright 2016 Cooyzee.
+ * Cooyzee's bootstrap 4 practice (https://github.com/cooyzee)
+ * Copyright 2018 Cooyzee.
  * Licensed under MIT
  */
 
-// Core variables and mixins
-@import "sass/variables";
-@import "sass/mixins";
+// Required
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
 
-// Reset
-@import "sass/normalize";
-
-/*! Core css begins here ... | Like what I saying, this is the industry standard*/
-
-// Core CSS
-@import "sass/scaffolding";
-@import "sass/grid";
-@import "sass/nav";
+// Optional
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/code";
+@import "../node_modules/bootstrap/scss/grid";
 
 body {
-  background-color: #ddd;
+  background-color: $gray-100;
 }

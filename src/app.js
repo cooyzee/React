@@ -7,7 +7,7 @@ import css from '../sass/app.scss'
 
 ReactDOM.render(
   <Router>
-    <div className="app">
+    <div className="container">
       <Route exact path="/" component={Index}/>
       <Route path="/test" component={Test}/>
     </div>
