@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import request from '../util/request'
 import { Link } from 'react-router-dom'
 import './index.scss'
 
-class Index extends Component {
+export default class Index extends Component {
   constructor (props) {
     super(props)
     this.state = {}
@@ -15,20 +15,45 @@ class Index extends Component {
     })
   }
 
+  // said to be the one that we can't imagine
+  handleInputChange(event) {
+    const target = event.target
+    const value = target.type === 'checkbox' ? target.checked : target.value
+    const name = target.name
+
+    this.setState({
+      [name]: value
+    })
+  }
+
+  handleClick(id) {
+    return e => {
+      console.log(e, id)
+    }
+  }
+
   render() {
     return (
       <div className="index-m">
-        <h1 className="display-4">Welcome!</h1>
-        <p className="lead">Lorem <mark>Cooyzee</mark></p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <s>Error maiores nesciunt quos</s> ut voluptates! Aut, <u>error fugiat id illo illum optio</u> quibusdam repellat tenetur. Dolore explicabo laborum <small>minus</small> <strong>suscipit</strong> <em>voluptatibus</em>.</p>
-        <blockquote className="blockquote text-center">
-          <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          <footer className="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-        </blockquote>
+        {true && <UseFragment />}
+        <div className="section">
+          <button onClick={this.handleClick(12)}>Click me</button>
+        </div>
         <h3><Link to="/test">To test page</Link></h3>
       </div>
     )
   }
 }
 
-export default Index
+//
+const UseFragment = () => (
+  <Fragment>
+    <h2>Creating a Toolchain from Scratch</h2>
+    <ul>
+      <li>A package manager</li>
+      <li>A bundler</li>
+      <li>A compiler</li>
+    </ul>
+    <h3>All react components must act like pure functions with respect to their props.</h3>
+  </Fragment>
+)
