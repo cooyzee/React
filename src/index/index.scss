@@ -2,10 +2,12 @@
 
 .index-m {
   padding: 0 10px;
-  .section {
-    margin-bottom: 20px;
+  border-top: 4px solid $blue;
+  h3 {
+    margin-top: 40px;
   }
-  .display-4 {
-    color: $green;
+  .scroll-wrap {
+    height: 300px;
+    overflow-y: scroll;
   }
 }

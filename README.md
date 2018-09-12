@@ -22,4 +22,5 @@ A JAVASCRIPT LIBRARY FOR BUILDING USER INTERFACES
 
 ## Update Times
 May 18, 2016 @ Cooyzee  
-Jan 31, 2018 @ Cooyzee
+Jan 31, 2018 @ Cooyzee  
+Sep 11, 2018 @ Cooyzee
