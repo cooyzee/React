@@ -3,6 +3,7 @@ import debounce from 'lodash/debounce'
 import request from '../util/request'
 import { Link } from 'react-router-dom'
 import './index.scss'
+import { UserInfoContext } from '../context/UserInfoContext'
 
 export default class Index extends Component {
   constructor (props) {
@@ -32,7 +33,7 @@ export default class Index extends Component {
 
   handleClick(id) {
     return e => {
-      console.log(e, id)
+      console.log(e, {id: 1, a: 'a'})
     }
   }
 
@@ -59,6 +60,7 @@ export default class Index extends Component {
         <h3>Context</h3>
         <p>Context provides a way to pass data through the component tree without having to pass props down manually at every level.</p>
         <p>Such as the current authenticated user, theme, or preferred language.</p>
+        <p className="red">Note: passing undefined as a provider value does not cause Consumers to use defaultValue</p>
         <h3>High-order component</h3>
         <p>
           It takes a component and return a component
@@ -78,6 +80,9 @@ const UseFragment = () => (
       <li>A bundler</li>
       <li>A compiler</li>
     </ul>
+    <UserInfoContext.Consumer>
+      {userInfo => <p>{userInfo.name}</p>}
+    </UserInfoContext.Consumer>
     <h3>All react components must act like pure functions with respect to their props.</h3>
   </Fragment>
 )
