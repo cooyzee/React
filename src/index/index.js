@@ -4,19 +4,24 @@ import request from '../util/request'
 import { Link } from 'react-router-dom'
 import './index.scss'
 import { UserInfoContext } from '../context/UserInfoContext'
+import Modal from '../common/Modal'
 
 export default class Index extends Component {
   constructor (props) {
     super(props)
+    this.state = {
+      isModal: false
+    }
     this.scrollSpy = this.scrollSpy.bind(this)
     this.emitChangeDebounced = debounce(e => {
       console.log(e)
     }, 250)
+    this.toggleModal = this.toggleModal.bind(this)
   }
 
   componentDidMount () {
     request.get('/assets/data/comments.json').then(data => {
-      console.log(data)
+      // console.log(data)
     })
   }
 
@@ -31,14 +36,21 @@ export default class Index extends Component {
     })
   }
 
+  // use for params click bindings
   handleClick(id) {
     return e => {
-      console.log(e, {id: 1, a: 'a'})
+      console.log(e, id)
     }
   }
 
   scrollSpy(e) {
     this.emitChangeDebounced(e.target.scrollTop)
+  }
+
+  toggleModal() {
+    this.setState(prev => ({
+      isModal: !prev.isModal
+    }))
   }
 
   componentWillUnmount() {
@@ -49,6 +61,13 @@ export default class Index extends Component {
     return (
       <div className="index-m">
         {true && <UseFragment />}
+        <h3>Portal</h3>
+        <button onClick={this.toggleModal}>open modal</button>
+        {this.state.isModal && (
+          <Modal>
+            <h1 onClick={this.toggleModal}>Hello</h1>
+          </Modal>
+        )}
         <p>
           <button onClick={this.handleClick(12)}>Click me</button>
         </p>
