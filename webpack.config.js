@@ -6,7 +6,8 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: '[name].js'
+    filename: '[name].js',
+    chunkFilename: '[name].js'
   },
   module: {
     rules:[
@@ -24,6 +25,11 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({template: './src/index.html'})
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   devServer: {
     host: '192.168.0.7',
     port: 3000,

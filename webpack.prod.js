@@ -14,10 +14,11 @@ shell.cp('-R', './assets', dir)
 
 module.exports = {
   mode: 'production',
-  entry: ['babel-polyfill', './src/main.js'],
+  entry: './src/main.js',
   output: {
     path: path.join(__dirname, dir),
     filename: '[name].[chunkhash:8].js',
+    chunkFilename: '[name].[chunkhash:8].js',
     publicPath: '/',
   },
   module: {
@@ -46,13 +47,7 @@ module.exports = {
       })
     ],
     splitChunks: {
-      cacheGroups: {
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: "vendors",
-          chunks: "all"
-        }
-      }
+      chunks: 'all'
     }
   },
   plugins: [
