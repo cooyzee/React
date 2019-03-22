@@ -1,10 +1,9 @@
 import React, { Component, Fragment } from 'react'
 import debounce from 'lodash/debounce'
-import request from '../util/request'
 import { Link } from 'react-router-dom'
 import './index.scss'
 import { UserInfoContext } from '../context/UserInfoContext'
-import Modal from '../common/Modal'
+import Modal from '../../com/components/Modal'
 
 export default class Index extends Component {
   constructor (props) {
@@ -20,9 +19,6 @@ export default class Index extends Component {
   }
 
   componentDidMount () {
-    request.get('/assets/data/comments.json').then(data => {
-      // console.log(data)
-    })
   }
 
   // said to be the one that we can't imagine

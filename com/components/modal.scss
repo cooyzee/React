@@ -1,8 +1,8 @@
-@import "../util/variables";
+@import "../variables";
 
-.modal-m {
+.g-modal {
   position: fixed;
-  z-index: 1000;
+  z-index: 999;
   top: 0;
   left: 0;
   right: 0;
@@ -11,5 +11,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, .6);
 }

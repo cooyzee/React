@@ -19,7 +19,7 @@ const beforeResponse = res => {
   if (res.data.success) {
     return res.data
   } else {
-    return null
+    return Promise.reject(new Error(res.data.errMsg || '服务器异常'))
   }
 }
 

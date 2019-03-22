@@ -7,7 +7,7 @@
 // React.createRef() upon React 16.3, callback refs
 
 import React from 'react'
-import Modal from '../common/Modal'
+import Modal from '../../com/components/Modal'
 
 class RefExample extends React.Component {
   constructor(props) {

@@ -6,7 +6,7 @@ export default class Modal extends React.Component {
   constructor(props) {
     super(props)
     this.el = document.createElement('div')
-    this.el.className = 'modal-m'
+    this.el.className = props.className ? `g-modal ${props.className}` : 'g-modal'
   }
 
   componentDidMount() {

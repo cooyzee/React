@@ -1,0 +1,26 @@
+@import "../variables";
+
+.g-message {
+  position: fixed;
+  z-index: 10000;
+  top: -3.5rem;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  transition: top .5s, opacity .5s;
+
+  &.show {
+    top: 1.5rem;
+    opacity: 1;
+  }
+
+  .content {
+    max-width: 80%;
+    padding: .5rem 1rem;
+    color: $white;
+    background-color: rgba(0,0,0, .5);
+    border-radius: $border-radius-lg;
+  }
+}
