@@ -3,4 +3,12 @@
 
 .flex {
   display: flex;
+  &.align {
+    align-items: center;
+  }
+}
+
+// color
+.blue {
+  color: $blue;
 }

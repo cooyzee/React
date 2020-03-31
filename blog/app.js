@@ -1,27 +1,21 @@
-import React from 'react'
-import { hot } from 'react-hot-loader'
+import React, { useState, useEffect } from 'react'
+import { hot } from 'react-hot-loader/root'
 import './app.scss'
-import Modal from '../com/components/Modal'
 
-class App extends React.Component {
+function App() {
+  const [state, setState] = useState('y')
 
-  state = {}
+  useEffect(() => {
+    setState(state + '44')
+  },[])
 
-  componentDidMount() {
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>Hello world!</h1>
-        <p>Yeah!</p>
-        <img src="/assets/blog/google.ico" alt=""/>
-        <Modal>
-          <div>This is not Cooyzee.</div>
-        </Modal>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <h1>Hello world!</h1>
+      <p className="blue">{state}</p>
+      <img src="/assets/blog/google.ico" alt=""/>
+    </div>
+  )
 }
 
-export default hot(module)(App)
+export default hot(App)

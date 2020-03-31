@@ -25,6 +25,11 @@ module.exports = (projectName) => {
         }
       ]
     },
+    resolve: {
+      alias: {
+        'react-dom': '@hot-loader/react-dom'
+      }
+    },
     plugins: [
       new HtmlWebpackPlugin({template: `./${projectName}/index.html`})
     ],

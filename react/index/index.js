@@ -19,6 +19,7 @@ export default class Index extends Component {
   }
 
   componentDidMount () {
+
   }
 
   // said to be the one that we can't imagine

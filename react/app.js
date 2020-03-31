@@ -1,33 +1,17 @@
-import React, { Suspense, lazy } from 'react'
-import { hot } from 'react-hot-loader'
+import React from 'react'
+import { hot } from 'react-hot-loader/root'
 import {HashRouter as Router, Route, Switch} from 'react-router-dom'
-import Index from './index'
-const Test = lazy(() => import('./test'))
-const Refs = lazy(() => import('./refs'))
-import Game from './game'
 import './app.scss'
-import { userInfo, UserInfoContext } from './context/UserInfoContext'
+import Test from './test'
 
-class App extends React.Component {
-
-  state = userInfo
-
-  render() {
-    return (
-      <UserInfoContext.Provider value={userInfo}>
-        <Router>
-          <Suspense fallback={<div>Loading...</div>}>
-            <Switch>
-              <Route exact path="/" component={Index}/>
-              <Route path="/test" component={Test}/>
-              <Route path="/refs" component={Refs}/>
-              <Route path="/game" component={Game}/>
-            </Switch>
-          </Suspense>
-        </Router>
-      </UserInfoContext.Provider>
-    )
-  }
+function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/" children={<Test />} />
+      </Switch>
+    </Router>
+  )
 }
 
-export default hot(module)(App)
+export default hot(App)
