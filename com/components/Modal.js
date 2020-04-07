@@ -1,26 +1,41 @@
-import React from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import './modal.scss'
 
-export default class Modal extends React.Component {
-  constructor(props) {
-    super(props)
-    this.el = document.createElement('div')
-    this.el.className = props.className ? `g-modal ${props.className}` : 'g-modal'
+export default function Modal(props) {
+  console.log('Modal')
+  const [mount, setMount] = useState(props.show)
+
+  if (props.show !== mount) {
+    setMount(props.show)
   }
 
-  componentDidMount() {
-    document.body.appendChild(this.el)
-  }
-
-  componentWillUnmount() {
-    document.body.removeChild(this.el)
-  }
-
-  render() {
-    return ReactDOM.createPortal(
-      this.props.children,
-      this.el
-    )
-  }
+  return mount && <Portal {...props} />
 }
+
+const modalRoot = document.getElementById('modal')
+function createWrapper() {
+  console.log('init')
+  const el = document.createElement('div')
+  el.className = 'g-modal'
+  return el
+}
+function Portal({ close, children }) {
+  console.log('Portal')
+  const el = useRef(createWrapper())
+
+  useEffect(() => {
+    modalRoot.appendChild(el.current)
+    return () => {
+      modalRoot.removeChild(el.current)
+    }
+  }, [])
+
+  return ReactDOM.createPortal(
+    <React.Fragment>
+      <div className="g-shade" onClick={close} />
+      {children}
+    </React.Fragment>, el.current)
+}
+
+

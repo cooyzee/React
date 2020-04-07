@@ -9,7 +9,13 @@
   bottom: 0;
   color: $white;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, .6);
+  .g-shade {
+    position: absolute;
+    z-index: -1;
+    @include square(100%);
+    background: rgba(0, 0, 0, .5);
+  }
 }
