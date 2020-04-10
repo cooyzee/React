@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Modal from '../../com/components/Modal'
+import Tabs from '../../com/components/Tabs'
 
 function testState() {
   console.log('test-state')
@@ -27,6 +28,10 @@ export default function Test() {
         Test
       </h1>
       <h1>Hello, modal {count}</h1>
+      <Tabs>
+        <div>tab 1</div>
+        <div>tab 2</div>
+      </Tabs>
       <p className="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
       <div>
         <button className="btn btn-primary" onClick={() => setTip(true)}>Tip</button>

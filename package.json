@@ -30,5 +30,8 @@
     "Android >= 4.0"
   ],
   "repository": "https://github.com/cooyzee/React.git",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "element-react": "^1.4.34"
+  }
 }
