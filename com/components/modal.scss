@@ -19,3 +19,27 @@
     background: rgba(0, 0, 0, .5);
   }
 }
+
+.fade-in {
+  animation: fadeIn 0.4s both;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.4s both;
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

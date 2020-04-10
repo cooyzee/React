@@ -3,26 +3,26 @@ import ReactDOM from 'react-dom'
 import './modal.scss'
 
 export default function Modal(props) {
-  console.log('Modal')
   const [mount, setMount] = useState(props.show)
 
   if (props.show !== mount) {
-    setMount(props.show)
+    if (mount) {
+      setTimeout(() => {
+        setMount(false)
+      }, 400)
+    } else {
+      setMount(props.show)
+    }
   }
 
   return mount && <Portal {...props} />
 }
 
-const modalRoot = document.getElementById('modal')
-function createWrapper() {
-  console.log('init')
-  const el = document.createElement('div')
-  el.className = 'g-modal'
-  return el
-}
-function Portal({ close, children }) {
-  console.log('Portal')
-  const el = useRef(createWrapper())
+const modalRoot = document.body
+
+function Portal({ show, close, children }) {
+  const el = useRef(document.createElement('div'))
+  el.current.className = `g-modal fade-${show ? 'in' : 'out'}`
 
   useEffect(() => {
     modalRoot.appendChild(el.current)
@@ -32,10 +32,10 @@ function Portal({ close, children }) {
   }, [])
 
   return ReactDOM.createPortal(
-    <React.Fragment>
-      <div className="g-shade" onClick={close} />
+    <>
+      <div className="g-shade" onClick={() => close(false)} />
       {children}
-    </React.Fragment>, el.current)
+    </>, el.current)
 }
 
 
