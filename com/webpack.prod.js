@@ -38,6 +38,11 @@ module.exports = (projectName) => {
         }
       ]
     },
+    resolve: {
+      alias: {
+        'react-dom': '@hot-loader/react-dom'
+      }
+    },
     optimization: {
       minimizer: [
         new UglifyJsPlugin(),
