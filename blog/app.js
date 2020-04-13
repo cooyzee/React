@@ -1,20 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { hot } from 'react-hot-loader/root'
 import './app.scss'
+import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import Header from './com/Header'
+import Index from "./index"
+import Notebook from "./notebook"
 
 function App() {
-  const [state, setState] = useState('y')
-
-  useEffect(() => {
-    setState(state + '44')
-  },[])
-
   return (
-    <div>
-      <h1>Hello world!</h1>
-      <p className="blue">{state}</p>
-      <img src="/assets/blog/google.ico" alt=""/>
-    </div>
+    <Router>
+      <Header />
+      <div className="container">
+        <Switch>
+          <Route path="/index" children={<Index />} />
+          <Route path="/notebook" children={<Notebook />} />
+          <Redirect to="/index" />
+        </Switch>
+      </div>
+    </Router>
   )
 }
 

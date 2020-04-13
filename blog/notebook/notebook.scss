@@ -1,0 +1,44 @@
+@import "../../com/variables";
+
+.notebook-list {
+
+}
+
+.notebook {
+  h1 {
+    font-size: 24px;
+    border-bottom: 1px solid $border-color;
+    padding: 1rem 0 0.5rem 0;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  code {
+    margin: 0 2px;
+    padding: 2px 5px;
+    white-space: nowrap;
+    color: #fff;
+    background-color: $green;
+    border-radius: 3px;
+  }
+
+  pre {
+    background-color: $gray-100;
+    padding: 0.5rem 1rem;
+    border-radius: $border-radius;
+    font-size: 14px;
+    code {
+      margin: 0;
+      padding: 0;
+      white-space: pre;
+      border: none;
+      color: inherit;
+      background: transparent;
+    }
+  }
+
+  blockquote {
+    border-left: 4px solid $gray-300;
+    padding: 0 1rem;
+  }
+}

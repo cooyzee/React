@@ -1,0 +1,31 @@
+@import "../../com/variables";
+
+.header {
+  background-color: $blue;
+  @include shadow;
+  .rainbow {
+    height: 0.25rem;
+  }
+  .coo-logo {
+    a {
+      display: block;
+      color: #fff;
+      font-size: 1.5rem;
+      line-height: 1;
+      letter-spacing: 1px;
+      &:after {
+        font-size: 18px;
+        opacity: .4;
+        content: "\AC";
+      }
+    }
+  }
+  .coo-nav {
+    a {
+      color: #d3e2fc;
+      display: block;
+      padding: .5rem;
+      text-transform: capitalize;
+    }
+  }
+}
