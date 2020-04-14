@@ -1,14 +1,11 @@
 @import "../../com/variables";
 
-.notebook-list {
-
-}
-
 .notebook {
   h1 {
     font-size: 24px;
     border-bottom: 1px solid $border-color;
     padding: 1rem 0 0.5rem 0;
+    margin-bottom: 1rem;
   }
   h2 {
     font-size: 20px;

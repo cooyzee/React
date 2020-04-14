@@ -13,7 +13,7 @@ function App() {
       <div className="container">
         <Switch>
           <Route path="/index" children={<Index />} />
-          <Route path="/notebook" children={<Notebook />} />
+          <Route path="/notebook/:id" children={<Notebook />} />
           <Redirect to="/index" />
         </Switch>
       </div>
