@@ -2,29 +2,40 @@
 
 .header {
   background-color: $blue;
+  color: #fff;
   @include shadow;
   .rainbow {
-    height: 0.25rem;
+    height: 3px;
   }
-  .coo-logo {
+  .header-height {
+    height: 50px;
+  }
+  .nav-logo {
+    padding: 0 $spacer;
     a {
-      display: block;
-      color: #fff;
+      color: inherit;
+      line-height: normal;
       font-size: 1.5rem;
-      line-height: 1;
-      letter-spacing: 1px;
       &:after {
         font-size: 18px;
         opacity: .4;
         content: "\AC";
       }
+      @include hover-focus-active {
+        text-decoration: none;
+      }
     }
   }
-  .coo-nav {
+  .nav-wrap {
+    display: flex;
+    align-self: stretch;
+    align-items: flex-end;
+    padding: 0 10px;
+    li {
+      padding: 5px 10px;
+    }
     a {
       color: #d3e2fc;
-      display: block;
-      padding: .5rem;
       text-transform: capitalize;
     }
   }

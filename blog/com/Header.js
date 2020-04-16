@@ -15,9 +15,9 @@ export default function Header() {
         <div className="col bg-dark" />
       </div>
       <div className="container">
-        <div className="row align-items-center px-3 px-sm-0">
-          <div className="coo-logo pt-1 py-md-3"><a href="/">Cooyzee</a></div>
-          <ul className="d-flex ml-auto list-unstyled m-0 coo-nav">
+        <div className="row align-items-center header-height">
+          <div className="nav-logo title"><a href="https://github.com/cooyzee">Cooyzee</a></div>
+          <ul className="d-flex ml-auto list-unstyled m-0 nav-wrap">
             <li><a href="#/index">home</a></li>
           </ul>
         </div>
