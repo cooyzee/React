@@ -23,9 +23,25 @@ export default function Notebook() {
     xhr.send()
   }, [id])
 
+  // implement hash anchor inside the notebook
+  function linkFilter(e) {
+    const a = e.target.href
+    if (a) {
+      const anchor = a.split("#")[1]
+      if (anchor.charAt(0) !== '/') {
+        e.preventDefault()
+        e.stopPropagation()
+        try {
+          document.getElementById(anchor).scrollIntoView()
+        } catch (e) {}
+      }
+    }
+  }
+
   return (
     <div
       className="notebook"
+      onClick={linkFilter}
       dangerouslySetInnerHTML={{__html: converter.makeHtml(content)}}
     />
   )
