@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Modal from '../../com/components/Modal'
 import Tabs from '../../com/components/Tabs'
+// import Swiper from 'swiper'
 
 function testState() {
-  console.log('test-state')
   return false
 }
 
@@ -20,13 +20,28 @@ export default function Test() {
     // return () => {
     //   clearInterval(id)
     // }
+    // const mySwiper = new Swiper('.swiper-container', {
+    //   speed: 400,
+    //   spaceBetween: 100
+    // })
   }, [])
 
   return (
     <div className="container-lg">
-      <h1 className="display-1">
+      <h1 className="display-1" onClick={() => setCount(1)}>
         Test
       </h1>
+      <div className="swiper-container">
+        <div className="swiper-wrapper">
+          <div className="swiper-slide">Slide 1</div>
+          <div className="swiper-slide">Slide 2</div>
+          <div className="swiper-slide">Slide 3</div>
+        </div>
+        <div className="swiper-pagination"></div>
+        <div className="swiper-button-prev"></div>
+        <div className="swiper-button-next"></div>
+        <div className="swiper-scrollbar"></div>
+      </div>
       <h1>Hello, modal {count}</h1>
       <Tabs>
         <div>tab 1</div>
@@ -53,7 +68,6 @@ export default function Test() {
 }
 
 const MFunc = React.memo(function Func(props) {
-  console.log('MFunc')
   return <h1>{props.children}</h1>
 })
 

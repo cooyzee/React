@@ -8,9 +8,8 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 module.exports = (projectName) => {
   const distDir = path.resolve('dist', projectName)
   shell.rm('-rf', distDir)
-  const assetsDir = path.resolve(distDir, 'assets')
-  shell.mkdir('-p', assetsDir)
-  shell.cp('-R', path.resolve('assets', projectName), assetsDir)
+  shell.mkdir('-p', distDir)
+  shell.cp('-R', path.resolve(projectName, 'assets'), distDir)
 
   return {
     mode: 'production',
@@ -18,7 +17,8 @@ module.exports = (projectName) => {
     output: {
       path: distDir,
       filename: '[name].[chunkhash:8].js',
-      chunkFilename: '[name].[chunkhash:8].js'
+      chunkFilename: '[name].[chunkhash:8].js',
+      publicPath: '/' + projectName
     },
     module: {
       rules:[

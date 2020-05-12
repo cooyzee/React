@@ -10,7 +10,7 @@ export default function Notebook() {
   const { id } = useParams()
 
   useEffect(() => {
-    const file = location.origin +  '/assets/blog/notebook/' + id + '.md'
+    const file = location.origin +  '/blog/assets/notebook/' + id + '.md'
     const xhr = new XMLHttpRequest()
     xhr.open("GET", file)
     xhr.onreadystatechange = () => {

@@ -19,7 +19,7 @@
   .propeller {
     @include square(36px);
     flex: none;
-    background-image: url("/assets/blog/propeller.png");
+    background-image: url("/blog/assets/propeller.png");
     background-size: cover;
     animation: propeller 1s steps(36) infinite
   }
