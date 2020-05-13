@@ -10,10 +10,10 @@
 
 $fonts: "BalooPaaji", "DancingScript", "IndieFlower", "KaushanScript";
 
-@font-face {
-  font-family: "KaushanScript";
-  src: url("/blog/assets/fonts/KaushanScript.ttf");
-}
+//@font-face {
+//  font-family: "KaushanScript";
+//  src: url("/blog/assets/fonts/KaushanScript.ttf");
+//}
 
 @font-face {
   font-family: "BalooPaaji";
@@ -24,6 +24,6 @@ body {
   font-family: "BalooPaaji", sans-serif;
 }
 
-.title {
-  font-family: "KaushanScript", sans-serif;
-}
+//.title {
+//  font-family: "KaushanScript", sans-serif;
+//}
