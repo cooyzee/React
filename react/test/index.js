@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Modal from '../../com/components/Modal'
 import Tabs from '../../com/components/Tabs'
-// import Swiper from 'swiper'
 
 function testState() {
   return false
@@ -28,6 +27,7 @@ export default function Test() {
 
   return (
     <div className="container-lg">
+      <a href="https://baidu.com">baidu.com</a>
       <h1 className="display-1" onClick={() => setCount(1)}>
         Test
       </h1>
