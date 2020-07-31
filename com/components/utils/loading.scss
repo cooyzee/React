@@ -1,18 +1,17 @@
-@import "../variables";
-
-.g-loading {
-  display: none;
+.coo-loading {
   position: fixed;
-  z-index: 9999;
+  z-index: 9998;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+  display: flex;
   align-items: center;
   justify-content: center;
-  .spin {
-    @include size(2rem);
-    background: url("/assets/blog/rainbow.svg");
+  .coo-spin {
+    width: 32px;
+    height: 32px;
+    background: url("/react/assets/rainbow.svg");
     background-size: cover;
     animation: spin 1s linear infinite;
   }
