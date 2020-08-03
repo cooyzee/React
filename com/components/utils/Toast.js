@@ -13,14 +13,15 @@ function Toast({ state, type, msg }) {
     }
   }, [])
 
-  function transitionEnd() {
+  function animationEnd() {
+    console.log('ani')
     if (!state) {
       ReactDOM.unmountComponentAtNode(container)
     }
   }
 
   return (
-    <div className={`coo-toast coo-fade-${state ? 'in' : 'out'}`} onTransitionEnd={transitionEnd}>
+    <div className={`coo-toast coo-fade-${state ? 'in' : 'out'}`} onAnimationEnd={animationEnd}>
       <div className="coo-wrap">
         <div className={`coo-icon coo-${type}`} />
         <div className="coo-text">{msg}</div>

@@ -1,3 +1,5 @@
+@import "../common";
+
 .coo-toast {
   position: fixed;
   top: 0;
@@ -68,23 +70,5 @@
     word-break: break-all;
     max-height: 123px;
     overflow: hidden;
-  }
-}
-
-.coo-fade-in {
-  animation: cooFadeIn 0.5s;
-}
-.coo-fade-out {
-  transition: opacity 0.5s;
-  opacity: 0;
-}
-
-@keyframes cooFadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
   }
 }
