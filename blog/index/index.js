@@ -6,7 +6,7 @@ export default function Index() {
     <div className="index">
       <div className="d-flex justify-content-center mt-5">
         <div className="propeller" />
-        <img className="avatar" src="https://graph.baidu.com/resource/121914cf6ba7b51dd6afa01589361771.jpg" alt="cooyzee"/>
+        <img className="avatar" src="/blog/assets/cooyzee.png" alt="cooyzee"/>
         <div className="propeller" />
       </div>
     </div>
