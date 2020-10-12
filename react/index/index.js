@@ -3,6 +3,7 @@ import './index.scss'
 import Modal from '../../com/components/utils/Modal'
 import loading from '../../com/components/utils/Loading'
 import toast from '../../com/components/utils/Toast'
+import Axios from 'axios'
 
 const testModalStyle = {
   position: 'absolute',
@@ -41,9 +42,20 @@ export default function Index() {
     }
   }
 
+  useEffect(function () {
+    Axios.get('/api/getUserInfo.json').then(res => {
+      console.log(res.data)
+    })
+  }, [])
+
   return (
     <div className="container">
       <h1 className="display-1">Test</h1>
+      <ul>
+        <li>
+          <a href="#/day-js">Day.js</a>
+        </li>
+      </ul>
       <div className="btn btn-primary" onClick={testLoading}>show loading</div>
       <div className="row py-3">
         <div className="col d-flex justify-content-between">

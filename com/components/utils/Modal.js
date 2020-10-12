@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useCallback } from 'react'
+import React, {useRef, useState, useEffect} from 'react'
 import ReactDOM from 'react-dom'
 import './modal.scss'
 
@@ -6,8 +6,8 @@ const modalRoot = document.body
 
 export default function Modal({ show, close, children }) {
   const [mounted, setMounted] = useState(false)
-  const isAnimation = useRef(false)
-  const el = useRef(document.createElement('div'))
+  const isAnimation = useRef(false) // 正在执行动画
+  const el = useRef(document.createElement('div')) // prevent creating duplicated container
 
   if (show && !mounted) { // show modal
     isAnimation.current = true
