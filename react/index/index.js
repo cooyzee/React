@@ -46,6 +46,8 @@ export default function Index() {
     Axios.get('/api/getUserInfo.json').then(res => {
       console.log(res.data)
     })
+    // recoil
+    // useRecoilState, staring strength reflection
   }, [])
 
   return (
@@ -70,6 +72,11 @@ export default function Index() {
           <h1>This is the modal.</h1>
         </div>
       </Modal>
+      <details>
+        <summary>Click to show the details</summary>
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dicta eligendi fuga iure possimus provident quaerat quam quia ullam voluptatibus! Deleniti doloribus earum enim molestiae nostrum qui reiciendis temporibus vitae!</div>
+      </details>
+      <input type="range" name="range" min="0" max="100" step="1" defaultValue="20"/>
       <div style={{height: '1000px'}} />
     </div>
   )

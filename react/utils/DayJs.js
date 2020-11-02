@@ -11,17 +11,24 @@ export default function DayJs() {
   })
 
   useEffect(function () {
-    console.log(dayjs(undefined).isValid())
+    console.log(dayjs(null))
   })
 
   return (
     <div className="container">
       <h4>Day.js</h4>
+      <div>Why Day.js: 2kb; Simple; Immutable; I18n</div>
+      <div>i18n: internationalization</div>
       <ul>
         {Object.keys(state).map(key => (
           <li key={key}><span style={{fontWeight: 'bold'}}>{key}</span> : {state[key]}</li>
         ))}
       </ul>
+
+      <dl>
+        <dt>Caveat:</dt>
+        <dd>解析：null为无效输入，字符串只支持IOS 8601格式</dd>
+      </dl>
     </div>
   )
 }
