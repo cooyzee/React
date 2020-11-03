@@ -4,12 +4,14 @@ import {HashRouter as Router, Route, Switch} from 'react-router-dom'
 import './app.scss'
 import Index from './index'
 import DayJs from './utils/DayJs'
+import IO from './utils/IntersectionObserver'
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route path="/day-js" children={<DayJs />} />
+        <Route path="/io" children={<IO />} />
         <Route path="/" children={<Index />} />
       </Switch>
     </Router>
