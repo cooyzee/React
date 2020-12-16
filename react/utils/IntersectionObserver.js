@@ -30,7 +30,6 @@ function reducer(state, action) {
   }
 }
 function initImgObserver(imgObserver) {
-  console.log('1111')
   return new IntersectionObserver(entries => {
     entries.forEach(item => {
       if (item.isIntersecting) {

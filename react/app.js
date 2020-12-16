@@ -6,6 +6,7 @@ import Index from './index'
 import Canvas from './index/Canvas'
 import DayJs from './utils/DayJs'
 import IO from './utils/IntersectionObserver'
+import Animation from './utils/requestAnimationFrame'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/day-js" children={<DayJs />} />
         <Route path="/io" children={<IO />} />
         <Route path="/canvas" children={<Canvas />} />
+        <Route path="/animation" children={<Animaation />} />
         <Route path="/" children={<Index />} />
       </Switch>
     </Router>
