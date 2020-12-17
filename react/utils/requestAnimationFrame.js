@@ -25,7 +25,7 @@ export default function Animation() {
 
 
 // html中实现动画效果的方法很多， 可以通过定时器setTimeOut，太low消耗高，css3的transition animation 可能会很复杂，兼容性问题等等
-// 还有canvas，H5提供了请求动画帧。好用，good！I'd like to have you a
+// 还有canvas，H5提供了请求动画帧。
 
 // setTimeout 容易出现卡顿和抖动的现象，原因是 setTimeOut任务会被放入异步队列，只有当主线程任务执行完后才会执行队列中的任务，因此实际执行的时间
 // 总是比设定的时间晚，与屏幕刷新时间不一定相同，会丢帧
