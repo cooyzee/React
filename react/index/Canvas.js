@@ -12,12 +12,13 @@ const style = {
 }
 
 export default function Canvas() {
-  const canvas = useRef(null)
+  const canvasRef = useRef(null)
 
   useEffect(function () {
-    canvas.current.width = 200
-    canvas.current.height = 200
-    const ctx = canvas.current.getContext('2d')
+    const canvas = canvasRef.current
+    canvas.width = 200
+    canvas.height = 200
+    const ctx = canvas.getContext('2d')
 
     drawStarPath(ctx, 50, 50, 100)
     ctx.lineWidth = 2
@@ -28,19 +29,19 @@ export default function Canvas() {
   return (
     <div style={style.page}>
       <h4>Canvas</h4>
-      <canvas ref={canvas} style={style.canvas} />
+      <canvas ref={canvasRef} style={style.canvas} />
     </div>
   )
 }
 
 function drawStarPath(ctx, x, y, r) {
   ctx.beginPath()
-  const angle = 360 / 5
+  const angle = 360 / 5 // 72°
   for (let i = 0; i < 5; i++) {
     const gap = i * angle
-    let radian = toRadian(18 + gap)
+    let radian = toRadian(18 + gap) // 90° - 72° = 18°
     ctx.lineTo(r * Math.cos(radian) + r, r - r * Math.sin(radian))
-    radian = toRadian(54 + gap)
+    radian = toRadian(54 + gap) // 72° / 2 + 18° = 54°
     const r1 = r / 2
     ctx.lineTo(r1 * Math.cos(radian) + r, r - r1 * Math.sin(radian))
   }

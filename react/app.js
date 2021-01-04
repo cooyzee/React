@@ -15,7 +15,7 @@ function App() {
         <Route path="/day-js" children={<DayJs />} />
         <Route path="/io" children={<IO />} />
         <Route path="/canvas" children={<Canvas />} />
-        <Route path="/animation" children={<Animaation />} />
+        <Route path="/animation" children={<Animation />} />
         <Route path="/" children={<Index />} />
       </Switch>
     </Router>
