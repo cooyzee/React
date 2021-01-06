@@ -48,6 +48,7 @@ export default function Index() {
     })
     // recoil
     // useRecoilState, staring strength reflection
+    // string technique
   }, [])
 
   return (
@@ -77,6 +78,7 @@ export default function Index() {
         <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dicta eligendi fuga iure possimus provident quaerat quam quia ullam voluptatibus! Deleniti doloribus earum enim molestiae nostrum qui reiciendis temporibus vitae!</div>
       </details>
       <input type="range" name="range" min="0" max="100" step="1" defaultValue="20"/>
+      <div className="stripe-bg" />
       <div style={{height: '1000px'}} />
     </div>
   )

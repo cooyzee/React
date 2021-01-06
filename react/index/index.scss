@@ -1,1 +1,8 @@
 @import "../../com/variables";
+
+.stripe-bg {
+  @include size(200px);
+  background: repeating-linear-gradient(-45deg, green 0 3px, #f8f8f8 0 2rem);
+  border-radius: 4px;
+  @include shadow;
+}
