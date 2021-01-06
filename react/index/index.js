@@ -79,6 +79,7 @@ export default function Index() {
       </details>
       <input type="range" name="range" min="0" max="100" step="1" defaultValue="20"/>
       <div className="stripe-bg" />
+      <div className="shine-button">Shine Button</div>
       <div style={{height: '1000px'}} />
     </div>
   )
