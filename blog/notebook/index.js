@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import './notebook.scss'
 import showdown from 'showdown'
 
-const converter = new showdown.Converter()
+const converter = new showdown.Converter() // 初始化转换器
 
 export default function Notebook() {
   const [content, setContent] = useState('')

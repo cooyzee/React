@@ -4,7 +4,7 @@ import 'react-hot-loader'
 import React from 'react'
 import { render } from 'react-dom'
 import App from './app'
-import './utils/mock'
+// import './utils/mock'
 
 render(
   <App />,

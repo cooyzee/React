@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './index.scss'
 import Modal from '../../com/components/utils/Modal'
 import loading from '../../com/components/utils/Loading'
@@ -71,6 +71,7 @@ export default function Index() {
       <Modal show={isModal} close={() => setIsModal(false)}>
         <div style={testModalStyle}>
           <h1>This is the modal.</h1>
+          <Test />
         </div>
       </Modal>
       <details>
@@ -81,6 +82,20 @@ export default function Index() {
       <div className="stripe-bg" />
       <div className="shine-button">Shine Button</div>
       <div style={{height: '1000px'}} />
+    </div>
+  )
+}
+
+function Test() {
+  // const temp = useRef(null)
+  useEffect(function () {
+    console.log('111')
+    const temp = document.getElementById('test')
+    console.log(temp.offsetHeight)
+  }, [])
+  return (
+    <div style={{height: '100px'}} id="test">
+      <input type="text" autoFocus placeholder="123123"/>
     </div>
   )
 }
