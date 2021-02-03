@@ -20,7 +20,6 @@ export default function Modal({ show, close, children }) {
 
   useEffect(function() {
     if (mounted) {
-      console.log('222')
       modalRoot.style.overflow = 'hidden'
       modalRoot.appendChild(el.current)
       setChild(true)

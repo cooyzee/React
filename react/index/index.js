@@ -46,9 +46,6 @@ export default function Index() {
     Axios.get('/api/getUserInfo.json').then(res => {
       console.log(res.data)
     })
-    // recoil
-    // useRecoilState, staring strength reflection
-    // string technique
   }, [])
 
   return (
@@ -87,9 +84,7 @@ export default function Index() {
 }
 
 function Test() {
-  // const temp = useRef(null)
   useEffect(function () {
-    console.log('111')
     const temp = document.getElementById('test')
     console.log(temp.offsetHeight)
   }, [])
