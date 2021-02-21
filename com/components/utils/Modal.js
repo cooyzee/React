@@ -54,4 +54,3 @@ export default function Modal({ show, close, children }) {
   }
   return null
 }
-
