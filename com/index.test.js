@@ -12,5 +12,3 @@ test('测试价格单位过滤', () => {
 // 浮点数 toBeCloseTo 字符串 toMatch 数组，可迭代对象toContain
 
 // toBeNull toBeUndefined toBeDefined toBeTruethy toBeFalsy toThrow
-
-// toB
